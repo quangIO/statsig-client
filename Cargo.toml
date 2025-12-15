@@ -3,7 +3,7 @@ name = "statsig-client"
 version = "0.1.0"
 edition = "2024"
 authors = ["Quang Luong <oss@okd.pw>"]
-license = "MIT OR Apache-2.0"
+license = "Apache-2.0"
 description = "A Rust client library for Statsig feature flag and experimentation platform"
 repository = "https://github.com/quangio/statsig-client"
 homepage = "https://github.com/quangio/statsig-client"
@@ -30,12 +30,12 @@ async-trait = "0.1"
 uuid = { version = "1.19", features = ["v4", "serde"] }
 url = "2.5"
 tracing = "0.1"
-validator = { version = "0.18", features = ["derive"] }
+validator = { version = "0.20", features = ["derive"] }
 sha2 = "0.10"
 hex = "0.4"
 bon = "3.8.1"
 reqwest-middleware = { version = "0.4", features = ["json"] }
-reqwest-retry = "0.7"
+reqwest-retry = "0.8"
 backoff = "0.4"
 httpdate = "1"
 http = "1"
