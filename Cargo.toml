@@ -1,0 +1,44 @@
+[package]
+name = "statsig-client"
+version = "0.1.0"
+edition = "2024"
+authors = ["Quang Luong <oss@okd.pw>"]
+license = "MIT OR Apache-2.0"
+description = "A Rust client library for Statsig feature flag and experimentation platform"
+repository = "https://github.com/quangio/statsig-client"
+homepage = "https://github.com/quangio/statsig-client"
+documentation = "https://docs.rs/statsig-client"
+keywords = ["statsig", "feature-flags", "experimentation", "ab-testing", "analytics"]
+categories = ["web-programming", "api-bindings"]
+readme = "README.md"
+rust-version = "1.85"
+
+[features]
+default = ["rustls-tls"]
+rustls-tls = ["reqwest/rustls-tls"]
+native-tls = ["reqwest/native-tls"]
+http2 = ["reqwest/http2"]
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+moka = { version = "0.12", features = ["future"] }
+thiserror = "2.0.17"
+async-trait = "0.1"
+uuid = { version = "1.19", features = ["v4", "serde"] }
+url = "2.5"
+tracing = "0.1"
+validator = { version = "0.18", features = ["derive"] }
+sha2 = "0.10"
+hex = "0.4"
+bon = "3.8.1"
+reqwest-middleware = { version = "0.4", features = ["json"] }
+reqwest-retry = "0.7"
+backoff = "0.4"
+httpdate = "1"
+http = "1"
+
+[dev-dependencies]
+anyhow = "1.0"
